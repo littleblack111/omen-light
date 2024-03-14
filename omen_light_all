@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Usage equal to omen_ligh, except that it applies to all the components. 
+# Just do not specify the component name.
+
+/home/pic4ser/Public/omen-light/omen_light front $1 $2 $3 $4
+/home/pic4ser/Public/omen-light/omen_light case $1 $2 $3 $4
+/home/pic4ser/Public/omen-light/omen_light cpu $1 $2 $3 $4
+/home/pic4ser/Public/omen-light/omen_light fan_bot $1 $2 $3 $4
+/home/pic4ser/Public/omen-light/omen_light fan_mid $1 $2 $3 $4
+/home/pic4ser/Public/omen-light/omen_light fan_top $1 $2 $3 $4
