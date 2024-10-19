@@ -125,24 +125,34 @@ bool SendReport(const Report& report) {
 }
 
 bool ParseLed(const std::string& arg, uint8_t* led) {
-  if (arg == "front") {
-    *led = 1;
-  } else if (arg == "chase") {
-    *led = 2;
-  } else {
-    try {
-      *led = std::stoi(arg);
-      if ((*led < 1) || (*led > N_LEDS)) {
-        std::cerr << "led number out of range: " << arg << std::endl;
-        return false;
-      }
-    } catch (const std::exception& e) {
-      // probably not an int, move on
-      std::cerr << "unknown led: " << arg << std::endl;
-      return false;
+    if (arg == "front")
+        *led = 1;
+    else if (arg == "chase")
+        *led = 2;
+    else if (arg == "cpu")
+        *led = 4;
+    else if (arg == "fan_bot")
+        *led = 5;
+    else if (arg == "fan_mid")
+        *led = 6;
+    else if (arg == "fan_top")
+        *led = 7;
+    else if (arg == "all")
+        *led = 11;
+    else {
+        try {
+            *led = std::stoi(arg);
+            if ((*led < 1) || (*led > N_LEDS)) {
+                std::cerr << "led number out of range: " << arg << std::endl;
+                return false;
+            }
+        } catch (const std::exception& e) {
+            // probably not an int, move on
+            std::cerr << "unknown led: " << arg << std::endl;
+            return false;
+        }
     }
-  }
-  return true;
+    return true;
 }
 
 bool ParsePower(const std::string& arg, Report::Power* power) {
