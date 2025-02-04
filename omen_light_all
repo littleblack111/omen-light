@@ -1,0 +1,7 @@
+#!/bin/sh
+/usr/local/bin/omen_light front $@
+/usr/local/bin/omen_light chase $@
+/usr/local/bin/omen_light cpu $@
+/usr/local/bin/omen_light fan_bot $@
+/usr/local/bin/omen_light fan_mid $@
+/usr/local/bin/omen_light fan_top $@
